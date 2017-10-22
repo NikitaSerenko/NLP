@@ -1,0 +1,7 @@
+define RuleGG "+N" "+Pl" -> "$" s || _ ;
+define RuleSG "+N" "+Sg" -> "$" || _ ;
+define RuleSIB [...] -> "e" || [s | z | x  "ch" | "sh" ] _ "$" "s";
+define RuleY "y" -> "ie"  || _ "$";
+define RuleClean "$" -> 0 || _ ;
+define RuleALL RuleSG .o. RuleGG .o. RuleY .o. RuleSIB .o. RuleClean;
+regex RuleALL;
